@@ -1,0 +1,31 @@
+version: "3.8" # Phiên bản Docker Compose
+
+services:
+  web1:
+    build: ./html1 # Build từ Dockerfile trong html1/
+    ports:
+      - "3001:80" # Map port 8081 host -> 80 container (để test từ máy host)
+    container_name: html1-container
+    networks:
+      - my-network # Kết nối vào network chung
+
+  web2:
+    build: ./html2 # Build từ Dockerfile trong html2/
+    ports:
+      - "3002:80" # Map port 8082 host -> 80 container
+    container_name: html2-container
+    networks:
+      - my-network # Kết nối vào network chung
+
+  web3:
+    build: ./html3 # Build từ Dockerfile trong html3/
+    ports:
+      - "3003:80" # Map port 8083 host -> 80 container
+    container_name: html3-container
+    networks:
+      - my-network # Kết nối vào network chung
+
+# Định nghĩa network (tạo network bridge mặc định)
+networks:
+  my-network:
+    driver: bridge # Driver mặc định cho network nội bộ

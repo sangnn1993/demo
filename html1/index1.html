@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang 1 - Chào Mừng</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 50px;
+        background-color: #f0f0f0;
+      }
+      h1 {
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Chào mừng đến với Docker Compose Test!</h1>
+    <p>
+      Đây là trang đầu tiên, được phục vụ từ container 1. Nội dung: Giới thiệu
+      cơ bản về học tập.
+    </p>
+    <p>Thời gian hiện tại: <span id="time"></span></p>
+    <script>
+      document.getElementById("time").innerText = new Date().toLocaleString();
+    </script>
+  </body>
+</html>
